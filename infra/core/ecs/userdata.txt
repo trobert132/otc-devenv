@@ -1,0 +1,22 @@
+# script can be used to run a specific script located in an OBS bucket
+
+#!/bin/bash
+
+# Log script actions
+exec > >(tee -i /var/log/user-data.log)
+exec 2>&1
+
+# Update the package list and install curl if not already installed
+sudo apt-get update -y
+sudo apt-get install -y curl
+sudo apt-get install -y parallel
+
+SCRIPT_URL="https://example.obs.eu-de.otc.t-systems.com/client/example.sh"
+
+SCRIPT_PATH="/home/ubuntu/example.sh"
+
+curl -o $SCRIPT_PATH $SCRIPT_URL
+
+chmod +x $SCRIPT_PATH
+
+parallel -j 100 $SCRIPT_PATH ::: {1..100}
