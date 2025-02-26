@@ -1,10 +1,5 @@
 data "opentelekomcloud_identity_project_v3" "current" {}
 
-variable "owner" {
-  type = string
-  default = "tothr"
-}
-
 variable "azs" {
   type = list
   default = ["eu-nl-01", "eu-nl-02"]
@@ -12,22 +7,24 @@ variable "azs" {
 
 #variable "metrics_version" {
 #  type = string
-#  default = "1.3.37"
+#  default = "1.3.60"
 #}
-
-variable "autoscaler_version" {
-  type = string
-  default = "1.29.17"
-}
+#
+#variable "autoscaler_version" {
+#  type = string
+#  default = "1.29.17"
+#}
 
 variable "everest_version" {
   type = string
-  default = "v1.29"
+  default = "1.29"
 }
 
-#variable "prefix" {}
+variable "prefix" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
+#variable "eni_subnet_id" {}
+#variable "eni_subnet_cidr" {}
 
 variable "node_os" {
   type = string
@@ -40,6 +37,11 @@ variable "node_flavor" {
 }
 
 variable "key_name" {}
+
+#variable "cnt" {
+#  type = string
+#  default = "vpc-router"
+#}
 
 variable "cnt" {
   type = string

@@ -1,10 +1,5 @@
-#variable "prefix" {
-#  type = string
-#}
-
-variable "owner" {
+variable "prefix" {
   type = string
-  default = "tothr"
 }
 
 variable "vpc_cidr" {

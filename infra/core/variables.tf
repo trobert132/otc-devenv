@@ -6,13 +6,17 @@ variable "domain_name" {
   type = string
 }
 
+variable "domain_id" {
+  type = string
+}
+
 variable "project_name" {
-  type    = string
+  type = string
   default = "eu-nl_tothr"
 }
 
 variable "owner" {
-  type    = string
+  type = string
   default = "tothr"
 }
 
@@ -20,4 +24,3 @@ variable "region" {
   type    = string
   default = "eu-nl"
 }
-
