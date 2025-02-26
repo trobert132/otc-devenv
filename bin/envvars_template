@@ -1,0 +1,6 @@
+export ENV_OTC_DOMAIN="" # the tenant ID starting with OTC0000000000
+export ENV_OTC_PROJECT_NAME="" # e.g. eu-nl_username
+export ENV_OTC_USERNAME="" # e.g. username
+export ENV_OTC_REGION="" # e.g. eu-nl
+export ENV_OTC_DOMAIN_ID=""  # find it under My Credentials in the OTC console, called Account ID
+export ENV_OTC_PASSWORD="" # the pw you use to log into the OTC console with your user
