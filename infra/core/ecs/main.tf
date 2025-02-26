@@ -5,12 +5,12 @@ output "security_group_ids" {
 }
 
 resource "opentelekomcloud_compute_secgroup_v2" "sg1" {
-  name        = "cdse_sg"
+  name        = "${local.prefix}-sg"
   description = "Security group for AS config"
 }
 
 resource "opentelekomcloud_as_configuration_v1" "as_config" {
-  scaling_configuration_name = "cdse-client"
+  scaling_configuration_name = "${local.prefix}-config"
   instance_config {
     flavor = var.node_config.flavor
     image  = var.node_config.image_id
@@ -30,7 +30,7 @@ resource "opentelekomcloud_as_configuration_v1" "as_config" {
 }
 
 resource "opentelekomcloud_as_group_v1" "as-grp1" {
-  scaling_group_name       = "cdse-as-grp"
+  scaling_group_name       = "${local.prefix}-as-grp"
   scaling_configuration_id = opentelekomcloud_as_configuration_v1.as_config.id
   vpc_id                   = var.vpc_id
   networks {
